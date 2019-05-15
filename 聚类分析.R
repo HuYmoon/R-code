@@ -10,7 +10,7 @@ head(data)
 for(i in 1:238)row.names(data)[i]=var[i]
 head(data)
 
-#EM�㷨
+#EM算法
 install.packages("mclust")
 library(mclust)
 fit_EM=Mclust(data[,-1])
@@ -29,7 +29,7 @@ data_dens=densityMclust(data[,-1])
 plot(data_dens,data[,-1],col="grey",nlevels=55)
 plot(data_dens,type="persp")
 
-#k-��ֵ
+#k-均值
 fit_km1=kmeans(data[,-1],center=10)
 print(fit_km1)
 plot(data[,-1],pch=(fit_km1$cluster-1))
